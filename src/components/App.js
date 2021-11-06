@@ -24,13 +24,13 @@ function App() {
       <div style={{ paddingTop: '69px', minHeight: 'calc(100vh - 80px)' }}>
         <Switch>
           <Route exact path="/" component={Auth(LandingPage, null)} />
-          <Route exact path="https://travelplanetserver.herokuapp.com/login" component={Auth(LoginPage, false)} />
-          <Route exact path="https://travelplanetserver.herokuapp.com/register" component={Auth(RegisterPage, false)} />
-          <Route exact path="https://travelplanetserver.herokuapp.com/product/upload" component={Auth(UploadProductPage, true)} />
-          <Route exact path="https://travelplanetserver.herokuapp.com/product/:productId" component={Auth(DetailProductPage, null)} />
-          <Route exact path="https://travelplanetserver.herokuapp.com/user/cart" component={Auth(CartPage, true)} />
-          <Route exact path="https://travelplanetserver.herokuapp.com/history" component={Auth(HistoryPage, true)} />
-          <Route exact path="https://travelplanetserver.herokuapp.com/user/mypick" component={Auth(MyPickPage, true)} />
+          <Route exact path="/login" component={Auth(LoginPage, false)} />
+          <Route exact path="/register" component={Auth(RegisterPage, false)} />
+          <Route exact path="/product/upload" component={Auth(UploadProductPage, true)} />
+          <Route exact path="/product/:productId" component={Auth(DetailProductPage, null)} />
+          <Route exact path="/user/cart" component={Auth(CartPage, true)} />
+          <Route exact path="/history" component={Auth(HistoryPage, true)} />
+          <Route exact path="/user/mypick" component={Auth(MyPickPage, true)} />
         </Switch>
       </div>
       <Footer />

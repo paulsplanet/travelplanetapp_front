@@ -21,18 +21,7 @@ function RightMenu(props) {
   console.log('prop', props)
   console.log('user', user)
 
-  if (user.userData && !user.userData.isAuth) {
-    return (
-      <Menu mode={props.mode}>
-        <Menu.Item key="mail">
-          <a href="/login">Signin</a>
-        </Menu.Item>
-        <Menu.Item key="app">
-          <a href="/register">Signup</a>
-        </Menu.Item>
-      </Menu>
-    )
-  } else if (user.loginSucces && user.loginSucces.loginSuccess) {
+if (user.loginSucces && user.loginSucces.loginSuccess) {
     return (
       <Menu mode={props.mode}>
         <Menu.Item key="history">
@@ -62,6 +51,17 @@ function RightMenu(props) {
 
         <Menu.Item key="logout">
           <a onClick={logoutHandler}>Logout</a>
+        </Menu.Item>
+      </Menu>
+    )
+  } else {
+    return (
+      <Menu mode={props.mode}>
+        <Menu.Item key="mail">
+          <a href="/login">Signin</a>
+        </Menu.Item>
+        <Menu.Item key="app">
+          <a href="/register">Signup</a>
         </Menu.Item>
       </Menu>
     )

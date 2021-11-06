@@ -50,6 +50,7 @@ function FileUpload (props) {
                     <div onClick={() => deleteHandler(image)} key={index}>
                         <img style={{ minWidth: '300px', width: '300px', height: '200px' }} 
                             src={`https://travelplanetserver.herokuapp.com/${image}`}
+                            alt="your upload file"
                         />
                     </div>
                 ))}

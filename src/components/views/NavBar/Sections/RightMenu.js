@@ -23,10 +23,10 @@ function RightMenu(props) {
     return (
       <Menu mode={props.mode}>
         <Menu.Item key="mail">
-          <a href="/login">Signin</a>
+          <a href="https://travelplanetserver.herokuapp.com/login">Signin</a>
         </Menu.Item>
         <Menu.Item key="app">
-          <a href="/register">Signup</a>
+          <a href="https://travelplanetserver.herokuapp.com/register">Signup</a>
         </Menu.Item>
       </Menu>
     )
@@ -34,15 +34,15 @@ function RightMenu(props) {
     return (
       <Menu mode={props.mode}>
         <Menu.Item key="history">
-          <a href="/history">History</a>
+          <a href="https://travelplanetserver.herokuapp.com/history">History</a>
         </Menu.Item>
 
         <Menu.Item key="upload">
-          <a href="/product/upload">Upload</a>
+          <a href="https://travelplanetserver.herokuapp.com/product/upload">Upload</a>
         </Menu.Item>
 
         <Menu.Item key="mypick">
-          <a href="/user/mypick" style={{ display: 'block', height: '60px', marginRight: '-14px', position: 'relative' }}>
+          <a href="https://travelplanetserver.herokuapp.com/user/mypick" style={{ display: 'block', height: '60px', marginRight: '-14px', position: 'relative' }}>
             <Icon type="heart" style={{ fontSize: 25 }}/>
             { user.userData && user.userData.mypick[0] &&
               <div style={{ borderRadius: '3px', height: '6px', width: '6px', backgroundColor:  'tomato', position: 'absolute', top: '12px', right: '22px' }}></div>
@@ -52,7 +52,7 @@ function RightMenu(props) {
 
         <Menu.Item key="cart" style={{ paddingBottom: 3 }}>
           <Badge count={user.userData && user.userData.cart.length}>
-            <a href="/user/cart" className="head-example" style={{ marginRight: -22, color: '#667777'}}>
+            <a href="https://travelplanetserver.herokuapp.com/user/cart" className="head-example" style={{ marginRight: -22, color: '#667777'}}>
               <Icon type="shopping-cart" style={{ fontSize: 30, marginBottom: 3 }} />
             </a>
           </Badge>

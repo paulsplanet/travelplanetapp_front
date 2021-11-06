@@ -30,7 +30,7 @@ function LandingPage() {
     }, [])
 
     const getProducts = (body) => {
-        axios.post('https://travelplanetserver.herokuapp.com/api/product/products', body)
+        axios.post('/api/product/products', body)
                 .then(response => {
                     if(response.data.success) {
                         if (body.loadMore) {

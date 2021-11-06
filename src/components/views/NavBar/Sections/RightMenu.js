@@ -18,6 +18,8 @@ function RightMenu(props) {
       }
     });
   };
+  console.log('prop', props)
+  console.log('user', user)
 
   if (user.userData && !user.userData.isAuth) {
     return (

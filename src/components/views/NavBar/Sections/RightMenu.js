@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Menu, Icon, Badge } from 'antd';
 import axios from 'axios';
 import { USER_SERVER } from '../../../Config';
@@ -7,7 +7,12 @@ import { withRouter } from 'react-router-dom';
 import { useSelector } from "react-redux";
 
 function RightMenu(props) {
+  const [loginSuccess, setLoginSuccess] = useState("false")
   const user = useSelector(state => state.user)
+
+  useEffect(() => {
+    if (user.loginSucces.loginSuccess) setLoginSuccess("true")
+  }, [user])
   
   const logoutHandler = () => {
     axios.get(`${USER_SERVER}/logout`).then(response => {
@@ -21,7 +26,7 @@ function RightMenu(props) {
   console.log('prop', props)
   console.log('user', user)
 
-if (user.loginSucces && user.loginSucces.loginSuccess) {
+if (loginSuccess) {
     return (
       <Menu mode={props.mode}>
         <Menu.Item key="history">

@@ -62,7 +62,7 @@ function LandingPage() {
         return (
             <Col lg={6} md={8} xs={24} key={index}>
                 <Card  
-                    cover={<a href={`https://travelplanetserver.herokuapp.com/product/${product._id}`}><ImageSlider images={product.images} /></a>}    
+                    cover={<a href={`/product/${product._id}`}><ImageSlider images={product.images} /></a>}    
                 >
                     <Meta title={product.title} description={`$${product.price}`} />
                 </Card>

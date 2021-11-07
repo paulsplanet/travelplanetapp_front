@@ -25,9 +25,9 @@ function RightMenu(props) {
       }
     });
   };
-  console.log('prop', props)
   console.log('user', user)
   console.log('success', success)
+  console.log('length', user.length, user[0], user[1])
 
 if (user && user.length > 1) {
   return (

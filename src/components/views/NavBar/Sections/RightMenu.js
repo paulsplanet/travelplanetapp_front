@@ -29,7 +29,7 @@ function RightMenu(props) {
   console.log('user', user)
   console.log('success', success)
 
-if (user.userData && !user.userData.isAuth) {
+if (!success) {
   return (
     <Menu mode={props.mode}>
       <Menu.Item key="mail">

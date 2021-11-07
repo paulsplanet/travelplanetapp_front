@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Menu, Icon, Badge } from 'antd';
 import axios from 'axios';
 import { USER_SERVER } from '../../../Config';
@@ -7,14 +7,9 @@ import { withRouter } from 'react-router-dom';
 import { useSelector } from "react-redux";
 
 function RightMenu(props) {
-  const [success, setSuccess] = useState([]);
   const user = useSelector(state => state.user)
 
-  useEffect(() => {
-      const userArray = Object.keys(user)
-      setSuccess(userArray);
-    
-  }, [user])
+
   
   const logoutHandler = () => {
     axios.get(`${USER_SERVER}/logout`).then(response => {
@@ -25,11 +20,8 @@ function RightMenu(props) {
       }
     });
   };
-  console.log('user', user)
-  console.log('success', success)
-  console.log('array', Object.keys(user), Object.keys(user).length)
 
-  if (success.length < 2) {
+  if (user.userData && !user.userData.isAuth) {
     return (
       <Menu mode={props.mode}>
         <Menu.Item key="mail">

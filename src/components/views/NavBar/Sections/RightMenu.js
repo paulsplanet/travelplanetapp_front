@@ -29,18 +29,7 @@ function RightMenu(props) {
   console.log('user', user)
   console.log('success', success)
 
-if (!success) {
-  return (
-    <Menu mode={props.mode}>
-      <Menu.Item key="mail">
-        <a href="/login">Signin</a>
-      </Menu.Item>
-      <Menu.Item key="app">
-        <a href="/register">Signup</a>
-      </Menu.Item>
-    </Menu>
-  )
-} else {
+if (success) {
   return (
     <Menu mode={props.mode}>
       <Menu.Item key="history">
@@ -73,7 +62,20 @@ if (!success) {
       </Menu.Item>
     </Menu>
   )
+} else {
+  return (
+    <Menu mode={props.mode}>
+      <Menu.Item key="mail">
+        <a href="/login">Signin</a>
+      </Menu.Item>
+      <Menu.Item key="app">
+        <a href="/register">Signup</a>
+      </Menu.Item>
+    </Menu>
+  )
 }
+
+
 }
 
 export default withRouter(RightMenu);

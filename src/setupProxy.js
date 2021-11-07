@@ -6,6 +6,9 @@ module.exports = function (app) {
         createProxyMiddleware({
             target: 'https://travelplanetserver.herokuapp.com/',
             changeOrigin: true,
+            pathRewrite: {
+                '^/api': ''
+            }
         })
     );
 };

@@ -7,13 +7,13 @@ import { withRouter } from 'react-router-dom';
 import { useSelector } from "react-redux";
 
 function RightMenu(props) {
-  const [success, setSuccess] = useState('false');
+  const [success, setSuccess] = useState([]);
   const user = useSelector(state => state.user)
 
   useEffect(() => {
-    if (user.loginSucces) {
-      setSuccess('true');
-    }
+      const userArray = Object.keys(user)
+      setSuccess(userArray);
+    
   }, [user])
   
   const logoutHandler = () => {
@@ -29,7 +29,7 @@ function RightMenu(props) {
   console.log('success', success)
   console.log('array', Object.keys(user), Object.keys(user).length)
 
-if (user && Object.keys(user)[1] === 'loginSucces') {
+if (user && success.length > 1) {
   return (
     <Menu mode={props.mode}>
       <Menu.Item key="history">

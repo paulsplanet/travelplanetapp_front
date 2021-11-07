@@ -29,7 +29,7 @@ function RightMenu(props) {
   console.log('success', success)
   console.log('array', Object.keys(user), Object.keys(user).length)
 
-if (user && Object.keys(user).length > 1) {
+if (user && Object.keys(user)[1] === 'loginSucces') {
   return (
     <Menu mode={props.mode}>
       <Menu.Item key="history">

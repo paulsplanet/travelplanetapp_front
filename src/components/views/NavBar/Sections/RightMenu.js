@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 
 function RightMenu(props) {
   const user = useSelector(state => state.user)
-
+  console.log('user', user)
 
   
   const logoutHandler = () => {

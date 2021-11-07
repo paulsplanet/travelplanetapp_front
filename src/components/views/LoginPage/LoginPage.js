@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { withRouter } from "react-router-dom";
-import { loginUser, auth } from "../../../_actions/user_actions";
+//import { withRouter } from "react-router-dom";
+import { loginUser } from "../../../_actions/user_actions";
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { Form, Icon, Input, Button, Checkbox, Typography } from 'antd';
@@ -41,7 +41,7 @@ function LoginPage(props) {
             email: values.email,
             password: values.password
           };
-          dispatch(auth);
+          
           dispatch(loginUser(dataToSubmit))
             .then(response => {
               if (response.payload.loginSuccess) {
@@ -145,6 +145,6 @@ function LoginPage(props) {
   );
 };
 
-export default withRouter(LoginPage);
+export default LoginPage;
 
 

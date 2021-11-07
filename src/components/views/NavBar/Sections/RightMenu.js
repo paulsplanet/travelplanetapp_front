@@ -29,7 +29,7 @@ function RightMenu(props) {
   console.log('user', user)
   console.log('success', success)
 
-if (success) {
+if (user && success) {
   return (
     <Menu mode={props.mode}>
       <Menu.Item key="history">

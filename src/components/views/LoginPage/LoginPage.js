@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-//import { withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { loginUser } from "../../../_actions/user_actions";
 import { Formik } from 'formik';
 import * as Yup from 'yup';
@@ -145,6 +145,6 @@ function LoginPage(props) {
   );
 };
 
-export default LoginPage;
+export default withRouter(LoginPage);
 
 

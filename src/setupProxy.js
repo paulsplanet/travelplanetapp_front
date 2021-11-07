@@ -4,10 +4,10 @@ module.exports = function (app) {
     app.use(
         '/api',
         createProxyMiddleware({
-            target: 'http://localhost:5000',
+            target: 'https://travelplanetserver.herokuapp.com/',
             changeOrigin: true,
         })
     );
 };
 
-//'https://travelplanetserver.herokuapp.com/'
+//'http://localhost:5000'

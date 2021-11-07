@@ -41,12 +41,12 @@ function LoginPage(props) {
             email: values.email,
             password: values.password
           };
-
+          dispatch(auth);
           dispatch(loginUser(dataToSubmit))
             .then(response => {
               if (response.payload.loginSuccess) {
                 window.localStorage.setItem('userId', response.payload.userId);
-                dispatch(auth);
+               
                 if (rememberMe === true) {
                   window.localStorage.setItem('rememberMe', values.id);
                 } else {

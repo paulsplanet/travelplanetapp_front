@@ -22,7 +22,7 @@ function RightMenu(props) {
   console.log('prop', props)
   console.log('user', user)
 
-if (user.loginSucces) {
+if (user && user.loginSucces) {
     return (
       <Menu mode={props.mode}>
         <Menu.Item key="history">

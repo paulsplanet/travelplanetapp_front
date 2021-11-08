@@ -60,7 +60,7 @@ export function addToCart(id){
         productId: id
     }
 
-    const request = axios.post(`${USER_SERVER}/addToCart`, body)
+    const request = axios.post(`${USER_SERVER}/addToCart`, body, { withCredentials: true })
         .then(response => response.data);
 
     return {
@@ -92,7 +92,7 @@ export function getCartItems(cartItems, userCart) {
 
 export function removeCartItem(productId) {
     
-    const request = axios.get(`https://travelplanetserver.herokuapp.com/api/users/removeFromCart?id=${productId}`)
+    const request = axios.get(`https://travelplanetserver.herokuapp.com/api/users/removeFromCart?id=${productId}`, { withCredentials: true })
         .then(response => {
             response.data.cart.forEach(item => {
                 response.data.productInfo.forEach((product, index) => {
@@ -127,7 +127,7 @@ export function addToMyPick(id){
         productId: id
     }
 
-    const request = axios.post(`${USER_SERVER}/addToMyPick`, body)
+    const request = axios.post(`${USER_SERVER}/addToMyPick`, body, { withCredentials: true })
         .then(response => response.data);
 
     return {

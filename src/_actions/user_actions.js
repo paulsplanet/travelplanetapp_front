@@ -113,7 +113,7 @@ export function removeCartItem(productId) {
 
 export function onSuccessBuy(data) {
     
-    const request = axios.post(`https://travelplanetserver.herokuapp.com/api/users/successBuy`, data)
+    const request = axios.post(`https://travelplanetserver.herokuapp.com/api/users/successBuy`, data, { withCredentials: true })
         .then(response => response.data);
 
     return {
@@ -138,7 +138,7 @@ export function addToMyPick(id){
 
 export function removeMyPickItem(productId) {
     
-    const request = axios.get(`https://travelplanetserver.herokuapp.com/api/users/removeFromMyPick?id=${productId}`)
+    const request = axios.get(`https://travelplanetserver.herokuapp.com/api/users/removeFromMyPick?id=${productId}`, { withCredentials: true })
         .then(response => response.data)
 
     return {
